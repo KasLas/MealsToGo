@@ -5,7 +5,7 @@ import { StatusBar, StyleSheet, Text, View, SafeAreaView } from "react-native";
 export default function App() {
   return (
     <>
-      <SafeAreaView style={{ flex: 1, paddingTop: StatusBar.currentHeight }}>
+      <SafeAreaView style={styles.container}>
         <View style={styles.searchContainer}>
           <Text>Search</Text>
         </View>
@@ -20,6 +20,7 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
+  container: { flex: 1, paddingTop: StatusBar.currentHeight },
   searchContainer: {
     backgroundColor: "green",
     padding: 16,
