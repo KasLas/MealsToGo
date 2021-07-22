@@ -4,10 +4,10 @@ import { Card } from "react-native-paper";
 import styled from "styled-components/native";
 
 const RestaurantCard = styled(Card)`
-  background-color: white;
+  background-color: ${(p) => p.theme.colors.bg.primary};
 `;
 const RestaurantCardCover = styled(Card.Cover)`
-  background-color: white;
+  background-color: ${(p) => p.theme.colors.bg.primary};
   padding: 10px;
 `;
 
