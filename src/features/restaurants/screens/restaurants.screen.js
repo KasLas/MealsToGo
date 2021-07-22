@@ -3,6 +3,7 @@ import { StatusBar } from "react-native";
 import { Searchbar } from "react-native-paper";
 import { RestaurantInfoCard } from "../components/restaurant-info-card.component";
 import styled from "styled-components/native";
+import { theme } from "../../../infrastructure/theme";
 
 const SafeArea = styled.SafeAreaView`
   flex: 1;
@@ -16,7 +17,7 @@ const SearchContainer = styled.View`
 
 const ListContainer = styled.View`
   flex-grow: 1;
-  background-color: blue;
+  background-color: ${(p) => theme.colors.bg.primary};
   padding: ${(p) => p.theme.space[3]};
 `;
 
