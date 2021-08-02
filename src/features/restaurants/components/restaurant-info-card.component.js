@@ -27,6 +27,10 @@ const InfoContainer = styled.View`
   padding: ${(p) => p.theme.space[2]};
 `;
 
+const RatingWrapper = styled.View`
+  flex-direction: row;
+`;
+
 export const RestaurantInfoCard = ({ restaurant = {} }) => {
   // Dummy data to style the component
   const {
@@ -41,12 +45,18 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
     isClosedTemporarily,
   } = restaurant;
 
+  const ratingArray = Array.from(new Array(Math.floor(rating)));
+
   return (
     <RestaurantCard elevation={5}>
       <RestaurantCardCover key={name} source={{ uri: photos[0] }} />
       <InfoContainer>
         <Title>{name}</Title>
-        <SvgXml xml={star} width={20} height={20} />
+        <RatingWrapper>
+          {ratingArray.map(() => (
+            <SvgXml xml={star} width={20} height={20} />
+          ))}
+        </RatingWrapper>
         <Address>{address}</Address>
       </InfoContainer>
     </RestaurantCard>
